@@ -3,10 +3,6 @@
 #oc project backstage
 #helm install backstage backstage/backstage --values values.yaml
 global:
-  servicenow: 
-    baseUrl: "https://dev215352.service-now.com/"
-    username: "admin"
-    password: "9oXaR*%paVY4"
   auth:
     backend:
       enabled: true
@@ -71,8 +67,7 @@ global:
         disabled: false
       - package: ./dynamic-plugins/dist/backstage-plugin-tech-radar
         disabled: false
-      - package: ./dynamic-plugins/dist/janus-idp-backstage-scaffolder-backend-module-servicenow-dynamic
-        disabled: false
+
 upstream:
   backstage:
     image:
@@ -344,3 +339,4 @@ route:
   tls:
     enabled: true
     termination: "edge"
+
